@@ -119,4 +119,8 @@
   body {
     @apply bg-primary text-foreground text-white ;
   }
+
+  .name{
+    @apply text-[48px] xl:text-[70px] leading-[1.1] 
+  }
 }
