@@ -36,13 +36,13 @@ const Home = () => {
               </div>
               <div className="ml-20 mt-3">
                 <Social
-                  containerStyles="flex gap-14 text-lg border-l border-white/20 pl-16"
-                  iconStyles="border border-white p-2 rounded-full text-white hover:text-white/80 transition duration-300 hover:drop-shadow-[0px_0_2px_white]"
+                  containerStyles="flex gap-14 text-lg border-l border-white/20 pl-16 hover:text-emerald-500"
+                  iconStyles="border border-white p-2 rounded-full text-white transition duration-300 hover:text-emerald-500 transition duration-300 hover:border-emerald-500"
                 />
               </div>
             </div>
           </div>
-        {/* <div><CodeSnippets/></div> */}
+          {/* <div><CodeSnippets/></div> */}
         </div>
       </div>
 
