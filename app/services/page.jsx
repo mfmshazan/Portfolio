@@ -51,13 +51,13 @@ const Services = () => {
         >
           {sevices.map((service, index) => {
             return(
-              <div key={index} >
-                <div>
+              <div key={index} className="flex-1 flex flex-col gap-6 group">
+                <div className="w-full flex justify-between items-center ">
                   <div>{service.number}</div>
                   <Link href={service.href}>afad</Link>
                 </div>
-                <h2 className="font-bold">{service.title}</h2>
-                <p>{service.Description}</p>
+                <h2 className="font-bold text-2xl">{service.title}</h2>
+                <p className="text-white/60">{service.Description}</p>
               </div>
             )
           })}
