@@ -8,8 +8,8 @@ import { ReactTyped } from "react-typed"
 
 const Home = () => {
   return (
-    <section className="h-full">
-      <div className="container mx-auto h-full">
+    <section className="h-full  bg-[#0a0f1c]">
+      <div className="container mx-auto h-full ">
         <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
           <div className="text-center xl:text-left">
             <h1 className="text-[20px] xl:text-[30px] font-extralight leading-[1.5]">
