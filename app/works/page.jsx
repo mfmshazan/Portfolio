@@ -34,7 +34,7 @@ export default function Works() {
           <div
             key={index}
              className="bg-[#111827] rounded-2xl p-6 shadow-lg transition-all duration-300
-             hover:shadow-[0_0_20px_4px_rgba(10,100,80,0.5)]"
+             hover:shadow-[0_0_10px_2px_rgba(10,140,90,1)]"
           >
             <h3 className="text-xl font-semibold mb-3">{project.title}</h3>
             <p className="text-gray-400 mb-4">{project.description}</p>
