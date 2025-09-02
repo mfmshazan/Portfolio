@@ -2,7 +2,6 @@
 
 import Social from "@/components/Social"
 import { Button } from "@/components/ui/button"
-import CodeSnippets from "@/components/ui/CodeSnippets"
 import { FiDownload } from "react-icons/fi"
 import { ReactTyped } from "react-typed"
 

@@ -8,22 +8,18 @@ const links = [
         name: "home",
         path: "/"
     },
-
     {
         name: "Resume",
         path: "/resume"
     },
-
     {
         name: "Works",
         path: "/works"
     },
-
     {
         name: "Contact",
         path: "/contact"
     },
-
 ]
 
 const Nav = () => {

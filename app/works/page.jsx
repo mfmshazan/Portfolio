@@ -47,13 +47,13 @@ const Works = () => {
               {/* Left Side - Project Details */}
               <div className="md:w-1/2 flex flex-col space-y-4 text-center md:text-left">
                 <span className="text-white font-bold text-4xl">{project.number}</span>
-                <h3 className="text-4xl font-bold pb-5">{project.title}</h3>
-                <p className="text-gray-400 pb-2">{project.description}</p>
+                <h3 className="text-4xl font-bold ">{project.title}</h3>
+                <p className="text-gray-400">{project.description}</p>
                 <div className="flex flex-wrap gap-2 justify-center md:justify-start">
                   {project.tech.map((t, i) => (
                     <span
                       key={i}
-                      className="pr-2 py-1  text-emerald-400 text-md"
+                      className="pr-2   text-emerald-400 text-md"
                     >
                       {t}
                     </span>

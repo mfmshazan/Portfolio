@@ -9,17 +9,17 @@ const info = [
   {
     icon: <FaPhoneAlt className="text-emerald-500" />,
     title: "Phone",
-    description: "+123 456 7890"
+    description: "+94 769157565"
   },
   {
     icon: <FaEnvelope className="text-emerald-500" />,
     title: "Email",
-    description: "shazan@gmail.com"
+    description: "faslanshazan23@gmail.com"
   },
   {
     icon: <FaMapMarkerAlt className="text-emerald-500" />,
     title: "Address",
-    description: "123 Street, City, Country"
+    description: "Galle Road Katubedda, Colombo, Sri Lanka"
   }
 ]
 

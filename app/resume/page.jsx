@@ -5,32 +5,32 @@ import { motion } from "framer-motion"
 
 const education = [
   {
-    year: "2020 - 2024",
-    title: "BSc in Computer Science",
-    place: "ABC University",
+    year: "2024-2028",
+    title: "BSc(Hons) in Information Technology",
+    place: "University of Moratuwa",
     description: "Focused on software engineering, algorithms, and full-stack web development."
   },
-  {
-    year: "2018 - 2020",
-    title: "High School",
-    place: "XYZ College",
-    description: "Studied mathematics and computer science with excellent academic performance."
-  }
+  // {
+  //   year: "2018 - 2020",
+  //   title: "High School",
+  //   place: "XYZ College",
+  //   description: "Studied mathematics and computer science with excellent academic performance."
+  // }
 ]
 
 const experience = [
   {
-    year: "2023 - Present",
+    year: "2025 - Present",
     title: "Fullstack Developer Intern",
-    place: "Tech Solutions Inc.",
+    place: "Tech Solutions WeBloomLabs.",
     description: "Worked on backend APIs, frontend UI, and integrated third-party services."
   },
-  {
-    year: "2022 - 2023",
-    title: "Freelance Developer",
-    place: "Remote",
-    description: "Built modern web applications and REST APIs for clients worldwide."
-  }
+  // {
+  //   year: "2022 - 2023",
+  //   title: "Freelance Developer",
+  //   place: "Remote",
+  //   description: "Built modern web applications and REST APIs for clients worldwide."
+  // }
 ]
 
 const skills = [
