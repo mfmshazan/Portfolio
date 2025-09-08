@@ -21,7 +21,7 @@ const education = [
 const experience = [
   {
     year: "2025 - Present",
-    title: "Fullstack Developer Intern",
+    title: "Fullstack Developer",
     place: "Tech Solutions WeBloomLabs.",
     description: "Worked on backend APIs, frontend UI, and integrated third-party services."
   },
@@ -45,7 +45,7 @@ const skills = [
 
 const Resume = () => {
   return (
-    <div className="h-screen overflow-hidden">
+    <div className="h-[80vh] overflow-hidden">
       <style jsx>{`
         .no-scrollbar {
           -ms-overflow-style: none;  /* IE and Edge */
@@ -56,7 +56,7 @@ const Resume = () => {
         }
       `}</style>
 
-      <div className="min-h-screen bg-[#0a0f1c] text-white px-6 py-16 flex items-center justify-center">
+     <div className="min-h-[80vh] bg-[#0a0f1c] text-white px-6 pt-0 pb-16 flex items-center justify-center">
         <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-12">
           
           {/* Left Side - Education & Experience */}
@@ -113,12 +113,12 @@ const Resume = () => {
               ))}
             </div>
 
-            <h2 className="text-4xl font-bold mt-12 mb-8">Achievements</h2>
+            {/* <h2 className="text-4xl font-bold mt-12 mb-8">Achievements</h2>
             <ul className="list-disc list-inside text-gray-400 space-y-2">
               <li>Built a real-time chat app with Next.js & Socket.io</li>
               <li>Contributed to open-source projects on GitHub</li>
               <li>Winner of Hackathon 2023 (Backend Challenge)</li>
-            </ul>
+            </ul> */}
           </div>
 
         </div>

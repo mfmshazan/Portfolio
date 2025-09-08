@@ -40,7 +40,7 @@ const Works = () => {
   return (
     <section className="min-h-screen text-white px-6 py-16">
       <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col space-y-36 mt-10 max-w-full">
+        <div className="flex flex-col space-y-36  max-w-full">
          
           {projects.map((project, index) => (
             <div key={index} className="flex flex-col md:flex-row gap-60 items-center">

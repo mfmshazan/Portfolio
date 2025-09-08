@@ -9,7 +9,7 @@ const Header = () => {
       <div className=" container mx-auto flex justify-between items-center ">
         {/*logo*/} 
         <Link href="/">
-          <h1 className="text-3xl text-white/70">
+          <h1 className="text-3xl text-white/">
             shazan
           </h1>
         </Link>
