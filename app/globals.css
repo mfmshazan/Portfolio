@@ -87,12 +87,25 @@
     @apply font-primary;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-[#0a0f1c] text-white;
   }
 
   .name {
     @apply text-[48px] xl:text-[70px] leading-[1.1];
+  }
+
+  /* Animation delays */
+  .delay-700 {
+    animation-delay: 700ms;
+  }
+
+  .delay-1000 {
+    animation-delay: 1000ms;
   }
 
   /* Hide scrollbar for Chrome, Safari, Opera */
