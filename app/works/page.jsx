@@ -4,35 +4,24 @@ import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 const projects = [
   {
-    title: "E-commerce Platform",
+    title: "Buy Plants",
     number: "01",
     description:
-      "Full-stack MERN e-commerce app with authentication, product management, and Stripe payment integration.",
-    tech: ["MongoDB", "Express", "React", "Node.js"],
-    image: "/images/eCommerce.webp",
+      "An online plant marketplace where customers can browse and purchase a variety of plants. Features a modern, user-friendly interface with product listings and e-commerce functionality.",
+    tech: ["Next.js", "React", "TailwindCSS"],
+    image: "/images/buyplants.png",
     github: "#",
-    live: "#",
+    live: "https://www.buyplants.lk/",
   },
   {
-    title: "Portfolio Website",
+    title: "Code Collab",
     number: "02",
     description:
-      "A responsive personal portfolio built with Next.js and TailwindCSS to showcase skills and projects.",
-    tech: ["Next.js", "TailwindCSS", "Framer Motion"],
-    image: "/images/portfolio.png",
-    github: "#",
-    live: "#",
-  },
-  
- {
-    title: "Expense Tracker",
-    number: "03",
-    description:
-      "A simple and intuitive expense tracker web application built with React and a local storage API. This project helps users manage their daily spending.",
-    tech: ["React", "CSS", "Local Storage"],
-    image: "/images/expenseTracker.png",
-    github: "#",
-    live: "#",
+      "A real-time collaborative code editor that allows multiple developers to work together seamlessly. Features live code synchronization and interactive collaboration tools.",
+    tech: ["React", "Node.js", "Socket.io"],
+    image: "/images/code-collab.png",
+    github: "https://github.com/mfmshazan/code-collab",
+    live: "https://code-collab-weld.vercel.app/",
   },
 ];
 
