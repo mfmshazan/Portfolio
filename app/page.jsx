@@ -1,5 +1,7 @@
 "use client"
 
+import { useState } from "react"
+import emailjs from "@emailjs/browser"
 import Social from "@/components/Social"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -68,31 +70,22 @@ const services = [
 
 const projects = [
   {
-    title: "E-commerce Platform",
+    title: "Buy Plants",
     number: "01",
-    description: "Full-stack MERN e-commerce app with authentication, product management, and Stripe payment integration.",
-    tech: ["MongoDB", "Express", "React", "Node.js"],
-    image: "/images/eCommerce.webp",
+    description: "An online plant marketplace where customers can browse and purchase a variety of plants. Features a modern, user-friendly interface with product listings and e-commerce functionality.",
+    tech: ["Next.js", "React", "TailwindCSS"],
+    image: "/images/buyplants.png",
     github: "#",
-    live: "#",
+    live: "https://www.buyplants.lk/",
   },
   {
-    title: "Portfolio Website",
+    title: "Code Collab",
     number: "02",
-    description: "A responsive personal portfolio built with Next.js and TailwindCSS to showcase skills and projects.",
-    tech: ["Next.js", "TailwindCSS", "Framer Motion"],
-    image: "/images/portfolio.png",
-    github: "#",
-    live: "#",
-  },
-  {
-    title: "Expense Tracker",
-    number: "03",
-    description: "A simple and intuitive expense tracker web application built with React and a local storage API. This project helps users manage their daily spending.",
-    tech: ["React", "CSS", "Local Storage"],
-    image: "/images/expenseTracker.png",
-    github: "#",
-    live: "#",
+    description: "A real-time collaborative code editor that allows multiple developers to work together seamlessly. Features live code synchronization and interactive collaboration tools.",
+    tech: ["React", "Node.js", "Socket.io","TailwindCSS"],
+    image: "/images/code-collab.png",
+    github: "https://github.com/mfmshazan/code-collab",
+    live: "https://code-collab-weld.vercel.app/",
   },
 ]
 
@@ -115,6 +108,50 @@ const contactInfo = [
 ]
 
 const Home = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: ""
+  })
+  const [loading, setLoading] = useState(false)
+  const [status, setStatus] = useState("")
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    })
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setLoading(true)
+    setStatus("")
+
+    try {
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        },
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+      )
+
+      setStatus("success")
+      setFormData({ name: "", email: "", subject: "", message: "" })
+    } catch (error) {
+      console.error("Error sending email:", error)
+      setStatus("error")
+    } finally {
+      setLoading(false)
+    }
+  }
+
   return (
     <div className="bg-[#0a0f1c]">
       {/* Hero Section */}
@@ -661,7 +698,7 @@ const Home = () => {
             transition={{ duration: 0.6 }}
             className="bg-[#162032] p-8 rounded-2xl shadow-lg border border-white/10"
           >
-            <form className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -670,7 +707,11 @@ const Home = () => {
               >
                 <Input
                   type="text"
+                  name="name"
                   placeholder="Name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
                   className="bg-[#0d1525] border border-transparent focus:border-emerald-500 text-white placeholder-gray-400 transition-all hover:border-white/20"
                 />
               </motion.div>
@@ -682,7 +723,11 @@ const Home = () => {
               >
                 <Input
                   type="email"
+                  name="email"
                   placeholder="Email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
                   className="bg-[#0d1525] border border-transparent focus:border-emerald-500 text-white placeholder-gray-400 transition-all hover:border-white/20"
                 />
               </motion.div>
@@ -694,7 +739,11 @@ const Home = () => {
               >
                 <Input
                   type="text"
+                  name="subject"
                   placeholder="Subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  required
                   className="bg-[#0d1525] border border-transparent focus:border-emerald-500 text-white placeholder-gray-400 transition-all hover:border-white/20"
                 />
               </motion.div>
@@ -705,7 +754,11 @@ const Home = () => {
                 transition={{ duration: 0.4, delay: 0.4 }}
               >
                 <Textarea
+                  name="message"
                   placeholder="Message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
                   className="bg-[#0d1525] border border-transparent focus:border-emerald-500 text-white placeholder-gray-400 h-32 transition-all hover:border-white/20"
                 />
               </motion.div>
@@ -717,10 +770,32 @@ const Home = () => {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                <Button className="w-full bg-emerald-600 hover:bg-emerald-700 text-white rounded-full transition-all">
-                  Send Message
+                <Button 
+                  type="submit"
+                  disabled={loading}
+                  className="w-full bg-emerald-600 hover:bg-emerald-700 text-white rounded-full transition-all disabled:opacity-50"
+                >
+                  {loading ? "Sending..." : "Send Message"}
                 </Button>
               </motion.div>
+              {status === "success" && (
+                <motion.p 
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  className="text-emerald-500 text-center"
+                >
+                  Message sent successfully! 🎉
+                </motion.p>
+              )}
+              {status === "error" && (
+                <motion.p 
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  className="text-red-500 text-center"
+                >
+                  Failed to send message. Please try again.
+                </motion.p>
+              )}
             </form>
           </motion.div>
         </div>
