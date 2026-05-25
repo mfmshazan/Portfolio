@@ -25,22 +25,22 @@ const experience = [
     place: "Tech Solutions WeBloomLabs.",
     description: "Worked on backend APIs, frontend UI, and integrated third-party services."
   },
-  // {
-  //   year: "2022 - 2023",
-  //   title: "Freelance Developer",
-  //   place: "Remote",
-  //   description: "Built modern web applications and REST APIs for clients worldwide."
-  // }
+  {
+    year: "2026 - Present",
+    title: "S0ftware Engineer",
+    place: "Remote",
+    description: "Contributed to real-world project with Next.js and WebSocket."
+  }
 ]
 
 const skills = [
-  { name: "JavaScript", level: 75 },
-  { name: "React.js", level: 70 },
-  { name: "Next.js", level: 60 },
-  { name: "Node.js / Express", level: 40 },
-  { name: "MongoDB / SQL", level: 20 },
-  { name: "C", level: 65 },
-  { name: "Python", level: 35 }
+  { name: "JavaScript", level: 80 },
+  { name: "React.js", level: 80 },
+  { name: "Next.js", level: 75 },
+  { name: "Node.js / Express", level: 85 },
+  { name: "MongoDB / SQL", level: 90 },
+  { name: "Java", level: 60 },
+  { name: "Python", level: 30 }
 ]
 
 const Resume = () => {
