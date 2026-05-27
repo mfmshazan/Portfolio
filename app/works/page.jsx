@@ -1,29 +1,7 @@
 "use client";
 
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
-
-const projects = [
-  {
-    title: "Buy Plants",
-    number: "01",
-    description:
-      "An online plant marketplace where customers can browse and purchase a variety of plants. Features a modern, user-friendly interface with product listings and e-commerce functionality.",
-    tech: ["Next.js", "React", "TailwindCSS"],
-    image: "/images/buyplants.png",
-    github: "#",
-    live: "https://www.buyplants.lk/",
-  },
-  {
-    title: "Code Collab",
-    number: "02",
-    description:
-      "A real-time collaborative code editor that allows multiple developers to work together seamlessly. Features live code synchronization and interactive collaboration tools.",
-    tech: ["React", "Node.js", "Socket.io"],
-    image: "/images/code-collab.png",
-    github: "https://github.com/mfmshazan/code-collab",
-    live: "https://code-collab-weld.vercel.app/",
-  },
-];
+import { projects } from "@/constants/data";
 
 const Works = () => {
   return (

@@ -2,46 +2,7 @@
 
 import { FaGraduationCap, FaBriefcase } from "react-icons/fa"
 import { motion } from "framer-motion"
-
-const education = [
-  {
-    year: "2024-2028",
-    title: "BSc(Hons) in Information Technology",
-    place: "University of Moratuwa",
-    description: "Focused on software engineering, algorithms, and full-stack web development."
-  },
-  // {
-  //   year: "2018 - 2020",
-  //   title: "High School",
-  //   place: "XYZ College",
-  //   description: "Studied mathematics and computer science with excellent academic performance."
-  // }
-]
-
-const experience = [
-  {
-    year: "2025 - Present",
-    title: "Fullstack Developer",
-    place: "Tech Solutions WeBloomLabs.",
-    description: "Worked on backend APIs, frontend UI, and integrated third-party services."
-  },
-  {
-    year: "2026 - Present",
-    title: "S0ftware Engineer",
-    place: "Remote",
-    description: "Contributed to real-world project with Next.js and WebSocket."
-  }
-]
-
-const skills = [
-  { name: "JavaScript", level: 80 },
-  { name: "React.js", level: 80 },
-  { name: "Next.js", level: 75 },
-  { name: "Node.js / Express", level: 85 },
-  { name: "MongoDB / SQL", level: 90 },
-  { name: "Java", level: 60 },
-  { name: "Python", level: 30 }
-]
+import { education, experience, skills } from "@/constants/data"
 
 const Resume = () => {
   return (
@@ -112,13 +73,6 @@ const Resume = () => {
                 </div>
               ))}
             </div>
-
-            {/* <h2 className="text-4xl font-bold mt-12 mb-8">Achievements</h2>
-            <ul className="list-disc list-inside text-gray-400 space-y-2">
-              <li>Built a real-time chat app with Next.js & Socket.io</li>
-              <li>Contributed to open-source projects on GitHub</li>
-              <li>Winner of Hackathon 2023 (Backend Challenge)</li>
-            </ul> */}
           </div>
 
         </div>
