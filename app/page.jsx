@@ -89,7 +89,7 @@ const Home = () => {
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse delay-700"></div>
         </div>
         <div className="container mx-auto h-full">
-          <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
+          <div className="relative flex flex-col xl:flex-row items-center justify-center xl:justify-between min-h-[calc(100vh-64px)] xl:min-h-0 xl:pt-8 xl:pb-24">
             <motion.div 
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -109,10 +109,10 @@ const Home = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="text-[20px] xl:text-[40px] font-medium mt-10 text-emerald-500"
+                className="text-[18px] xl:text-[40px] font-medium mt-10 text-emerald-500"
               >
                 <ReactTyped
-                  strings={["Frontend Developer", "Backend Developer", "Full Stack Developer"]}
+                  strings={["Fullstack Developer", "Mobile App Developer", "AI Engineer"]}
                   typeSpeed={50}
                   backSpeed={50}
                   loop
@@ -122,7 +122,7 @@ const Home = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
-                className="max-w-xl mt-6 text-gray-600 font-medium"
+                className="max-w-xl mt-6 text-gray-300 font-medium text-sm xl:text-base"
               >
                 I'm a Fullstack Developer passionate about solving problems and building user-focused digital solutions.
               </motion.div>
@@ -130,18 +130,18 @@ const Home = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.8 }}
-                className="flex mt-8"
+                className="flex flex-col xl:flex-row items-center xl:items-start gap-6 mt-8"
               >
-                <div className="flex gap-8 px-1 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-lg hover:scale-105 transition-transform duration-300">
+                <a href="/images/Shazan_CV.pdf" download="Shazan_CV.pdf" className="flex gap-8 px-1 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-lg hover:scale-105 transition-transform duration-300">
                   <Button variant="outline" className="flex items-center gap-2 text-md hover:bg-emerald-500/10 transition-all">
                     Download CV
                     <FiDownload className="text-xl" />
                   </Button>
-                </div>
-                <div className="ml-20 mt-3">
+                </a>
+                <div className="xl:border-l xl:border-white/20 xl:pl-8">
                   <Social
-                    containerStyles="flex gap-14 text-lg border-l border-white/20 pl-16 hover:text-emerald-500"
-                    iconStyles="border border-white p-2 rounded-full text-white transition duration-300 hover:text-emerald-500 transition duration-300 hover:border-emerald-500 hover:scale-110"
+                    containerStyles="flex gap-6 text-lg hover:text-emerald-500"
+                    iconStyles="border border-white p-2 rounded-full text-white transition duration-300 hover:text-emerald-500 hover:border-emerald-500 hover:scale-110"
                   />
                 </div>
               </motion.div>
@@ -150,7 +150,7 @@ const Home = () => {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-              className="relative w-full xl:w-1/2 flex flex-col items-center justify-center mt-8 xl:mt-0"
+              className="hidden xl:flex xl:relative xl:w-1/2 xl:flex-col xl:items-center xl:justify-center xl:mt-0"
             >
               {/* Floating Code Animation */}
               <div className="relative w-full max-w-md h-[400px]">
