@@ -22,7 +22,7 @@ export const experience = [
   {
     year: "2026 - Present",
     title: "Software Engineer",
-    place: "Remote",
+    place: "WIWIS.AI",
     description: "Contributed to real-world project with Next.js and WebSocket.",
   },
 ]
@@ -43,7 +43,7 @@ export const projects = [
     number: "01",
     description:
       "An online plant marketplace where customers can browse and purchase a variety of plants. Features a modern, user-friendly interface with product listings and e-commerce functionality.",
-    tech: ["Next.js", "React", "TailwindCSS"],
+    tech: ["Next.js", "React", "Node.js", "TailwindCSS"],
     image: "/images/buyplants.png",
     github: "#",
     live: "https://www.buyplants.lk/",
@@ -58,6 +58,18 @@ export const projects = [
     github: "https://github.com/mfmshazan/code-collab",
     live: "https://live-codes.vercel.app/",
   },
+  {
+    title: "DIGIFIX Auto Parts",
+    number: "03",
+    description:
+      "A full-stack car parts marketplace platform — buyers can search parts by number plate, browse categories, and track live deliveries via Google Maps. Sellers manage inventory and orders through a dedicated dashboard. Features real-time GPS tracking, push notifications, and a React Native mobile app.",
+    tech: ["Next.js", "React Native", "Node.js", "PostgreSQL", "TailwindCSS", "Google Maps API", "Socket.io"],
+    image: "/images/digifix-autoparts.png",
+    github: null,
+    live: null,
+    isPrivate: true,
+    isUnderDevelopment: true,
+  },
 ]
 
 export const services = [
@@ -70,9 +82,9 @@ export const services = [
   },
   {
     number: "02",
-    title: "UI/UX Design",
+    title: "AI Integration",
     Description:
-      "Creating user-friendly interfaces and engaging user experiences with a focus on usability and aesthetics.",
+      "Integrating AI-powered features into applications — from chatbots and recommendation engines to intelligent automation using modern AI APIs and models.",
     href: "",
   },
   {
@@ -84,9 +96,9 @@ export const services = [
   },
   {
     number: "04",
-    title: "Figma to Code",
+    title: "Mobile App Development",
     Description:
-      "Converting Figma designs into clean, efficient, and responsive code for seamless web",
+      "Building cross-platform mobile applications using React Native — delivering smooth, native-like experiences for both iOS and Android.",
     href: "",
   },
 ]

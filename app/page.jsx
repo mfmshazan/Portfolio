@@ -510,27 +510,53 @@ const Home = () => {
                       </motion.span>
                     ))}
                   </div>
+                  {/* Status Badges */}
+                  <div className="flex flex-wrap gap-2 justify-center md:justify-start">
+                    {project.isUnderDevelopment && (
+                      <span className="flex items-center gap-1 px-3 py-1 rounded-full bg-amber-500/15 text-amber-400 text-xs font-semibold border border-amber-500/30">
+                        <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse inline-block"></span>
+                        Under Development
+                      </span>
+                    )}
+                    {project.isPrivate && (
+                      <span className="flex items-center gap-1 px-3 py-1 rounded-full bg-slate-500/15 text-slate-400 text-xs font-semibold border border-slate-500/30">
+                        🔒 Private Repo
+                      </span>
+                    )}
+                  </div>
                   <div className="flex gap-4 mt-4 justify-center md:justify-start">
-                    <motion.a 
-                      href={project.live} 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      whileHover={{ scale: 1.2, rotate: 5 }}
-                      whileTap={{ scale: 0.9 }}
-                      className="text-2xl hover:text-emerald-500 transition p-3 rounded-full border border-white/20 hover:border-emerald-500"
-                    >
-                      <FaExternalLinkAlt />
-                    </motion.a>
-                    <motion.a 
-                      href={project.github} 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      whileHover={{ scale: 1.2, rotate: -5 }}
-                      whileTap={{ scale: 0.9 }}
-                      className="text-2xl hover:text-emerald-500 transition p-3 rounded-full border border-white/20 hover:border-emerald-500"
-                    >
-                      <FaGithub />
-                    </motion.a>
+                    {project.live ? (
+                      <motion.a 
+                        href={project.live} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        whileHover={{ scale: 1.2, rotate: 5 }}
+                        whileTap={{ scale: 0.9 }}
+                        className="text-2xl hover:text-emerald-500 transition p-3 rounded-full border border-white/20 hover:border-emerald-500"
+                      >
+                        <FaExternalLinkAlt />
+                      </motion.a>
+                    ) : (
+                      <span title="Not published yet" className="text-2xl text-white/20 p-3 rounded-full border border-white/10 cursor-not-allowed">
+                        <FaExternalLinkAlt />
+                      </span>
+                    )}
+                    {project.github ? (
+                      <motion.a 
+                        href={project.github} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        whileHover={{ scale: 1.2, rotate: -5 }}
+                        whileTap={{ scale: 0.9 }}
+                        className="text-2xl hover:text-emerald-500 transition p-3 rounded-full border border-white/20 hover:border-emerald-500"
+                      >
+                        <FaGithub />
+                      </motion.a>
+                    ) : (
+                      <span title="Private repository" className="text-2xl text-white/20 p-3 rounded-full border border-white/10 cursor-not-allowed">
+                        <FaGithub />
+                      </span>
+                    )}
                   </div>
                 </motion.div>
 
