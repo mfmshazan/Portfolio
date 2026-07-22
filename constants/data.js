@@ -27,14 +27,31 @@ export const experience = [
   },
 ]
 
-export const skills = [
-  { name: "JavaScript", level: 80 },
-  { name: "React.js", level: 80 },
-  { name: "Next.js", level: 75 },
-  { name: "Node.js / Express", level: 85 },
-  { name: "MongoDB / SQL", level: 90 },
-  { name: "Java", level: 60 },
-  { name: "Python", level: 70 },
+export const skillCategories = [
+  {
+    category: "Languages",
+    items: ["JavaScript", "TypeScript", "Python", "Java", "SQL"],
+  },
+  {
+    category: "Frontend",
+    items: ["React.js", "Next.js", "React Native", "TailwindCSS"],
+  },
+  {
+    category: "Backend",
+    items: ["Node.js", "Express", "Socket.io", "REST APIs"],
+  },
+  {
+    category: "Databases",
+    items: ["MongoDB", "PostgreSQL", "MySQL"],
+  },
+  {
+    category: "DevOps & Tools",
+    items: ["Git", "GitHub", "Docker", "Vercel", "Postman"],
+  },
+  {
+    category: "AI & Integrations",
+    items: ["AI APIs", "Google Maps API", "EmailJS"],
+  },
 ]
 
 export const projects = [

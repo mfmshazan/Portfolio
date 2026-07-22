@@ -12,7 +12,8 @@ import TechBackground from "@/components/TechBackground"
 import { FaGraduationCap, FaBriefcase, FaGithub, FaExternalLinkAlt, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa"
 import { motion } from "framer-motion"
 import Link from "next/link"
-import { education, experience, skills, projects, services } from "@/constants/data"
+import { education, experience, projects, services } from "@/constants/data"
+import SkillsShowcase from "@/components/SkillsShowcase"
 
 
 
@@ -276,15 +277,17 @@ const Home = () => {
           <div className="absolute top-1/4 right-10 w-64 h-64 bg-emerald-500/5 rounded-full blur-3xl"></div>
           <div className="absolute bottom-1/4 left-10 w-80 h-80 bg-purple-500/5 rounded-full blur-3xl"></div>
         </div>
-        <div className="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-12 relative z-10">
-          {/* Left Side - Education & Experience */}
+        <div className="max-w-6xl mx-auto w-full relative z-10">
+          {/* Top Row - Education & Experience side by side */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          {/* Education */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <motion.h2 
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -314,12 +317,21 @@ const Home = () => {
               ))}
             </div>
 
-            <motion.h2 
+          </motion.div>
+
+          {/* Experience */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-4xl font-bold mt-12 mb-8"
+              transition={{ duration: 0.5 }}
+              className="text-4xl font-bold mb-8"
             >
               Experience
             </motion.h2>
@@ -345,14 +357,17 @@ const Home = () => {
             </div>
           </motion.div>
 
-          {/* Right Side - Skills */}
+          </div>
+
+          {/* Bottom - Skills full width */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
+            className="mt-16"
           >
-            <motion.h2 
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -361,33 +376,7 @@ const Home = () => {
             >
               Skills
             </motion.h2>
-            <div className="space-y-6">
-              {skills.map((skill, i) => (
-                <motion.div 
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.1 }}
-                  whileHover={{ scale: 1.02 }}
-                  className="p-3 rounded-lg hover:bg-white/5 transition-all"
-                >
-                  <div className="flex justify-between text-sm mb-2">
-                    <span>{skill.name}</span>
-                    <span className="text-emerald-500">{skill.level}%</span>
-                  </div>
-                  <div className="w-full bg-gray-800 rounded-full h-2 overflow-hidden">
-                    <motion.div
-                      className="bg-emerald-600 h-2 rounded-full"
-                      initial={{ width: 0 }}
-                      whileInView={{ width: `${skill.level}%` }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 1.5, ease: "easeInOut", delay: i * 0.1 }}
-                    />
-                  </div>
-                </motion.div>
-              ))}
-            </div>
+            <SkillsShowcase />
           </motion.div>
         </div>
       </section>
