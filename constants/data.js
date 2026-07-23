@@ -76,8 +76,18 @@ export const projects = [
     live: "https://live-codes.vercel.app/",
   },
   {
-    title: "DIGIFIX Auto Parts",
+    title: "CrickScore",
     number: "03",
+    description:
+      "A multi-tenant live cricket scoring platform where organizers run their own tournaments and viewers follow live scores, scorecards, and stats. Features ball-by-ball scoring and role-based access with JWT authentication.",
+    tech: ["React", "TypeScript", "Node.js", "Express", "MongoDB", "JWT", "TailwindCSS"],
+    image: "/images/crickscore.png",
+    github: "https://github.com/mfmshazan/cricket-score",
+    live: "https://crickscore-seven.vercel.app/",
+  },
+  {
+    title: "DIGIFIX Auto Parts",
+    number: "04",
     description:
       "A full-stack car parts marketplace platform — buyers can search parts by number plate, browse categories, and track live deliveries via Google Maps. Sellers manage inventory and orders through a dedicated dashboard. Features real-time GPS tracking, push notifications, and a React Native mobile app.",
     tech: ["Next.js", "React Native", "Node.js", "PostgreSQL", "TailwindCSS", "Google Maps API", "Socket.io"],
