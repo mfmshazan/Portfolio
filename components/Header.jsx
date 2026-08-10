@@ -35,7 +35,9 @@ const Header = () => {
         <div className="hidden xl:flex items-center gap-6">
           <Nav />
           <a href="#contact" onClick={scrollToContact}>
-            <Button className="text-sm py-2 px-4">Hire me</Button>
+            <Button className="text-sm py-2 px-5 bg-gradient-to-r from-emerald-500 to-teal-400 text-[#0a0f1c] shadow-lg shadow-emerald-500/20 hover:shadow-emerald-500/40 hover:brightness-110 hover:-translate-y-0.5 transition-all duration-300">
+              Hire me
+            </Button>
           </a>
         </div>
 

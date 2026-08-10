@@ -6,7 +6,7 @@ import Social from "@/components/Social"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { FiDownload } from "react-icons/fi"
+import { FiDownload, FiChevronDown, FiChevronUp } from "react-icons/fi"
 import { ReactTyped } from "react-typed"
 import TechBackground from "@/components/TechBackground"
 import { FaGraduationCap, FaBriefcase, FaGithub, FaExternalLinkAlt, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa"
@@ -44,6 +44,7 @@ const Home = () => {
   })
   const [loading, setLoading] = useState(false)
   const [status, setStatus] = useState("")
+  const [visibleProjects, setVisibleProjects] = useState(4)
 
   const handleChange = (e) => {
     setFormData({
@@ -456,9 +457,9 @@ const Home = () => {
             Projects
           </motion.h2>
           <div className="flex flex-col space-y-36 max-w-full">
-            {projects.map((project, index) => (
-              <motion.div 
-                key={index} 
+            {projects.slice(0, visibleProjects).map((project, index) => (
+              <motion.div
+                key={index}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
@@ -567,6 +568,44 @@ const Home = () => {
               </motion.div>
             ))}
           </div>
+
+          {/* View more / less projects */}
+          {projects.length > 4 && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="flex justify-center mt-20"
+            >
+              {visibleProjects < projects.length ? (
+                <motion.button
+                  onClick={() =>
+                    setVisibleProjects((prev) => Math.min(prev + 3, projects.length))
+                  }
+                  whileHover={{ scale: 1.04 }}
+                  whileTap={{ scale: 0.97 }}
+                  className="group flex items-center gap-3 pl-7 pr-5 py-3 rounded-full bg-white/5 backdrop-blur-md border border-white/15 text-white font-semibold tracking-wide hover:bg-white/10 hover:border-white/30 transition-all duration-300"
+                >
+                  <span>View more projects</span>
+                  <span className="flex items-center gap-1 text-sm text-gray-400">
+                    <span>{projects.length - visibleProjects}</span>
+                    <FiChevronDown className="text-lg text-white transition-transform duration-300 group-hover:translate-y-0.5" />
+                  </span>
+                </motion.button>
+              ) : (
+                <motion.button
+                  onClick={() => setVisibleProjects(4)}
+                  whileHover={{ scale: 1.04 }}
+                  whileTap={{ scale: 0.97 }}
+                  className="group flex items-center gap-3 px-6 py-3 rounded-full bg-transparent border border-white/15 text-gray-300 font-semibold tracking-wide hover:bg-white/5 hover:text-white hover:border-white/30 transition-all duration-300"
+                >
+                  <span>Show less</span>
+                  <FiChevronUp className="text-lg transition-transform duration-300 group-hover:-translate-y-0.5" />
+                </motion.button>
+              )}
+            </motion.div>
+          )}
         </div>
       </section>
 

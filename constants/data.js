@@ -66,18 +66,8 @@ export const projects = [
     live: "https://www.buyplants.lk/",
   },
   {
-    title: "Code Collab",
-    number: "02",
-    description:
-      "A real-time collaborative code editor that allows multiple developers to work together seamlessly. Features live code synchronization and interactive collaboration tools.",
-    tech: ["React", "Node.js", "Socket.io", "TailwindCSS"],
-    image: "/images/code-collab.png",
-    github: "https://github.com/mfmshazan/code-collab",
-    live: "https://live-codes.vercel.app/",
-  },
-  {
     title: "CrickScore",
-    number: "03",
+    number: "02",
     description:
       "A multi-tenant live cricket scoring platform where organizers run their own tournaments and viewers follow live scores, scorecards, and stats. Features ball-by-ball scoring and role-based access with JWT authentication.",
     tech: ["React", "TypeScript", "Node.js", "Express", "MongoDB", "JWT", "TailwindCSS"],
@@ -86,8 +76,28 @@ export const projects = [
     live: "https://crickscore-seven.vercel.app/",
   },
   {
-    title: "DIGIFIX Auto Parts",
+    title: "Code Collab",
+    number: "03",
+    description:
+      "A real-time collaborative code editor that allows multiple developers to work together seamlessly. Features live code synchronization and interactive collaboration tools.",
+    tech: ["React", "Node.js", "Socket.io", "TailwindCSS"],
+    image: "/images/code-collab.png",
+    github: "https://github.com/mfmshazan/code-collab",
+    live: "https://live-codes.vercel.app/",
+  },
+  {
+    title: "Floodlit Ground Booking",
     number: "04",
+    description:
+      "A floodlit cricket ground booking system for evening and night sessions (6:00 PM – 2:00 AM). Users pick a date, reserve time slots, and see instant pricing with hourly rates and whole-night packages. Features real-time slot availability and a streamlined instant-booking flow.",
+    tech: ["Next.js", "React", "Node.js", "TailwindCSS"],
+    image: "/images/floodlit.png",
+    github: "#",
+    live: "https://booking-system-teal.vercel.app/",
+  },
+  {
+    title: "DIGIFIX Auto Parts",
+    number: "05",
     description:
       "A full-stack car parts marketplace platform — buyers can search parts by number plate, browse categories, and track live deliveries via Google Maps. Sellers manage inventory and orders through a dedicated dashboard. Features real-time GPS tracking, push notifications, and a React Native mobile app.",
     tech: ["Next.js", "React Native", "Node.js", "PostgreSQL", "TailwindCSS", "Google Maps API", "Socket.io"],
