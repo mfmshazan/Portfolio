@@ -76,8 +76,18 @@ export const projects = [
     live: "https://crickscore-seven.vercel.app/",
   },
   {
-    title: "Code Collab",
+    title: "Warehouse Management System",
     number: "03",
+    description:
+      "An AI-powered warehouse management system that streamlines inventory tracking, stock movements, and order management. Features intelligent insights, real-time stock monitoring, and an intuitive dashboard for warehouse operators.",
+    tech: ["React", "Node.js", "Express", "PostgreSQL", "Prisma", "TailwindCSS", "Google Gemini API", "JWT"],
+    image: "/images/wms.png",
+    github: "https://github.com/mfmshazan/warehouse-management-system",
+    live: "https://warehouse-management-system-ashen.vercel.app/",
+  },
+  {
+    title: "Code Collab",
+    number: "04",
     description:
       "A real-time collaborative code editor that allows multiple developers to work together seamlessly. Features live code synchronization and interactive collaboration tools.",
     tech: ["React", "Node.js", "Socket.io", "TailwindCSS"],
@@ -87,7 +97,7 @@ export const projects = [
   },
   {
     title: "Floodlit Ground Booking",
-    number: "04",
+    number: "05",
     description:
       "A floodlit cricket ground booking system for evening and night sessions (6:00 PM – 2:00 AM). Users pick a date, reserve time slots, and see instant pricing with hourly rates and whole-night packages. Features real-time slot availability and a streamlined instant-booking flow.",
     tech: ["Next.js", "React", "Node.js", "TailwindCSS"],
@@ -97,7 +107,7 @@ export const projects = [
   },
   {
     title: "DIGIFIX Auto Parts",
-    number: "05",
+    number: "06",
     description:
       "A full-stack car parts marketplace platform — buyers can search parts by number plate, browse categories, and track live deliveries via Google Maps. Sellers manage inventory and orders through a dedicated dashboard. Features real-time GPS tracking, push notifications, and a React Native mobile app.",
     tech: ["Next.js", "React Native", "Node.js", "PostgreSQL", "TailwindCSS", "Google Maps API", "Socket.io"],
