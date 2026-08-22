@@ -25,6 +25,13 @@ module.exports = {
   	},
   	extend: {
   		colors: {
+  			emerald: {
+  				'300': '#9BDB3C',
+  				'400': '#6CC417',
+  				'500': '#5CA80F',
+  				'600': '#4C8C0C',
+  				'700': '#3E7209'
+  			},
   			primary: {
   				DEFAULT: 'hsl(var(--primary))',
   				foreground: 'hsl(var(--primary-foreground))'

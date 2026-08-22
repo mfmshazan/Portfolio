@@ -117,7 +117,7 @@ const Hero = () => {
             style={{
               left: `${((i + 0.5) / LINE_COUNT) * 100}%`,
               opacity: 0.06,
-              boxShadow: "0 0 8px 0 rgba(16,185,129,0.55)",
+              boxShadow: "0 0 8px 0 rgba(108,196,23,0.55)",
             }}
           />
         ))}
@@ -126,69 +126,75 @@ const Hero = () => {
       {/* Vignette so the type stays legible */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_35%,rgba(0,0,0,0.85)_100%)]" />
 
-      {/* Top meta row */}
-      <div className="hero-fade absolute left-0 right-0 top-24 z-10 flex items-center justify-between px-6 font-primary text-[11px] uppercase tracking-[0.25em] text-white/50 md:px-12">
-        <span className="flex items-center gap-2">
-          <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px] shadow-emerald-400" />
-          Available for work
-        </span>
-        <span className="hidden md:inline">CMB 28° / {clock}</span>
-      </div>
-
-      {/* Center content */}
-      <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col justify-center px-6 md:px-12">
-        <p className="hero-fade mb-6 font-primary text-xs uppercase tracking-[0.35em] text-white/50">
-          Hello, I&apos;m Shazan Faslan
-        </p>
-
-        <h1 ref={headlineRef} className="font-display leading-[0.82]">
-          <span className="block overflow-hidden">
-            <span className="hero-line-reveal block text-[15vw] text-white/10 md:text-[11vw]">
-              BUILDING THE
-            </span>
+      {/* Content column */}
+      <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col px-6 md:px-12">
+        {/* Meta row (below the fixed header) */}
+        <div className="hero-fade flex items-center justify-between pt-28 font-primary text-[11px] uppercase tracking-[0.25em] text-white/50 md:pt-32">
+          <span className="flex items-center gap-2">
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px] shadow-emerald-400" />
+            Available for work
           </span>
-          <span className="block overflow-hidden">
-            <span className="hero-line-reveal block text-[15vw] text-white md:text-[11vw]">
-              MODERN&nbsp;WEB
-            </span>
-          </span>
-        </h1>
-
-        <div className="hero-fade mt-8 max-w-xl font-primary text-sm leading-relaxed text-white/60">
-          <p className="uppercase tracking-[0.2em] text-white/40">
-            Fullstack · Mobile · AI Engineer
-          </p>
-          <p className="mt-2 text-emerald-400">
-            I engineer fast, user-focused digital products — from web to mobile to AI.
-          </p>
+          <span className="hidden md:inline">CMB 28° / {clock}</span>
         </div>
 
-        <div className="hero-fade mt-10 flex flex-col items-start gap-6 sm:flex-row sm:items-center">
-          <a
-            href="/images/Shazan_CV.pdf"
-            download="Shazan_CV.pdf"
-            className="group inline-flex items-center gap-3 rounded-full border border-emerald-400/40 bg-emerald-400/5 px-6 py-3 font-primary text-xs uppercase tracking-[0.2em] text-emerald-300 transition-all duration-300 hover:border-emerald-400 hover:bg-emerald-400/10"
+        {/* Center content */}
+        <div className="flex flex-1 flex-col justify-center py-10">
+          <p className="hero-fade mb-5 font-primary text-xs uppercase tracking-[0.35em] text-white/50">
+            Hello, I&apos;m Shazan Faslan
+          </p>
+
+          <h1
+            ref={headlineRef}
+            className="font-display leading-[0.85] tracking-tight"
           >
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 transition-transform group-hover:scale-150" />
-            Download CV
-          </a>
-          <Social
-            containerStyles="flex gap-4"
-            iconStyles="border border-white/20 p-2.5 rounded-full text-white/70 transition-all duration-300 hover:text-emerald-400 hover:border-emerald-400 hover:scale-110"
-          />
-        </div>
-      </div>
+            <span className="block overflow-hidden">
+              <span className="hero-line-reveal block whitespace-nowrap text-[clamp(2.5rem,11vw,10rem)] text-white/10">
+                BUILDING THE
+              </span>
+            </span>
+            <span className="block overflow-hidden">
+              <span className="hero-line-reveal block whitespace-nowrap text-[clamp(2.5rem,11vw,10rem)] text-white">
+                MODERN&nbsp;WEB
+              </span>
+            </span>
+          </h1>
 
-      {/* Enter system cue */}
-      <a
-        href="#resume"
-        className="hero-fade absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-3"
-      >
-        <span className="hero-vline h-14 w-px bg-gradient-to-b from-transparent via-emerald-400/60 to-emerald-400" />
-        <span className="font-primary text-[10px] uppercase tracking-[0.3em] text-white/50">
-          Enter System ↓
-        </span>
-      </a>
+          <div className="hero-fade mt-8 max-w-xl font-primary text-sm leading-relaxed text-white/60">
+            <p className="uppercase tracking-[0.2em] text-white/40">
+              Fullstack · Mobile · AI Engineer
+            </p>
+            <p className="mt-2 text-emerald-400">
+              I engineer fast, user-focused digital products — from web to mobile to AI.
+            </p>
+          </div>
+
+          <div className="hero-fade mt-10 flex flex-col items-start gap-6 sm:flex-row sm:items-center">
+            <a
+              href="/images/Shazan_CV.pdf"
+              download="Shazan_CV.pdf"
+              className="group inline-flex items-center gap-3 rounded-full border border-emerald-400/40 bg-emerald-400/5 px-6 py-3 font-primary text-xs uppercase tracking-[0.2em] text-emerald-300 transition-all duration-300 hover:border-emerald-400 hover:bg-emerald-400/10"
+            >
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 transition-transform group-hover:scale-150" />
+              Download CV
+            </a>
+            <Social
+              containerStyles="flex gap-4"
+              iconStyles="border border-white/20 p-2.5 rounded-full text-white/70 transition-all duration-300 hover:text-emerald-400 hover:border-emerald-400 hover:scale-110"
+            />
+          </div>
+        </div>
+
+        {/* Enter system cue */}
+        <a
+          href="#resume"
+          className="hero-fade flex flex-col items-center gap-3 self-center pb-8"
+        >
+          <span className="hero-vline h-14 w-px bg-gradient-to-b from-transparent via-emerald-400/60 to-emerald-400" />
+          <span className="font-primary text-[10px] uppercase tracking-[0.3em] text-white/50">
+            Enter System ↓
+          </span>
+        </a>
+      </div>
     </section>
   );
 };

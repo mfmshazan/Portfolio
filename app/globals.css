@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply font-primary bg-[#0a0f1c] text-white leading-loose;
+    @apply font-primary bg-black text-white leading-loose;
   }
 
   :root {
@@ -92,7 +92,7 @@
   }
 
   body {
-    @apply bg-[#0a0f1c] text-white;
+    @apply bg-black text-white;
   }
 
   .name {

@@ -42,7 +42,7 @@ const iconMap = {
   "Node.js": { icon: SiNodedotjs, color: "#5FA04E" },
   Express: { icon: SiExpress, color: "#FFFFFF" },
   "Socket.io": { icon: SiSocketdotio, color: "#FFFFFF" },
-  "REST APIs": { icon: TbApi, color: "#10B981" },
+  "REST APIs": { icon: TbApi, color: "#6CC417" },
   MongoDB: { icon: SiMongodb, color: "#47A248" },
   PostgreSQL: { icon: SiPostgresql, color: "#4169E1" },
   MySQL: { icon: SiMysql, color: "#4479A1" },
@@ -51,12 +51,12 @@ const iconMap = {
   Docker: { icon: SiDocker, color: "#2496ED" },
   Vercel: { icon: SiVercel, color: "#FFFFFF" },
   Postman: { icon: SiPostman, color: "#FF6C37" },
-  "AI APIs": { icon: SiOpenai, color: "#10B981" },
+  "AI APIs": { icon: SiOpenai, color: "#6CC417" },
   "Google Maps API": { icon: SiGooglemaps, color: "#4285F4" },
-  EmailJS: { icon: MdEmail, color: "#10B981" },
+  EmailJS: { icon: MdEmail, color: "#6CC417" },
 }
 
-const fallback = { icon: TbApi, color: "#10B981" }
+const fallback = { icon: TbApi, color: "#6CC417" }
 
 const SkillsShowcase = () => {
   return (
