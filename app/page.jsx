@@ -2,18 +2,15 @@
 
 import { useState } from "react"
 import emailjs from "@emailjs/browser"
-import Social from "@/components/Social"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { FiDownload, FiChevronDown, FiChevronUp } from "react-icons/fi"
-import { ReactTyped } from "react-typed"
-import TechBackground from "@/components/TechBackground"
+import { FiChevronDown, FiChevronUp } from "react-icons/fi"
 import { FaGraduationCap, FaBriefcase, FaGithub, FaExternalLinkAlt, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa"
 import { motion } from "framer-motion"
-import Link from "next/link"
 import { education, experience, projects, services } from "@/constants/data"
 import SkillsShowcase from "@/components/SkillsShowcase"
+import Hero from "@/components/Hero"
 
 
 
@@ -84,192 +81,7 @@ const Home = () => {
   return (
     <div className="bg-[#0a0f1c]">
       {/* Hero Section */}
-      <section id="home" className="min-h-screen flex items-center relative overflow-hidden bg-gradient-to-br from-[#0a0f1c] via-[#0d1525] to-[#0a0f1c]">
-        {/* Animated background elements */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-emerald-500/5 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse delay-700"></div>
-        </div>
-        <div className="container mx-auto h-full">
-          <div className="relative flex flex-col xl:flex-row items-center justify-center xl:justify-between min-h-[calc(100vh-64px)] xl:min-h-0 xl:pt-8 xl:pb-24">
-            <motion.div 
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="text-center xl:text-left"
-            >
-              <motion.h1 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-[20px] xl:text-[30px] font-extralight leading-[1.5]"
-              >
-                Hello I'm <br />
-                <span className="name font-light tracking-tight">Shazan Faslan</span>
-              </motion.h1>
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="text-[18px] xl:text-[40px] font-medium mt-10 text-emerald-500"
-              >
-                <ReactTyped
-                  strings={["Fullstack Developer", "Mobile App Developer", "AI Engineer"]}
-                  typeSpeed={50}
-                  backSpeed={50}
-                  loop
-                />
-              </motion.div>
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
-                className="max-w-xl mt-6 text-gray-300 font-medium text-sm xl:text-base"
-              >
-                I'm a Fullstack Developer passionate about solving problems and building user-focused digital solutions.
-              </motion.div>
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.8 }}
-                className="flex flex-col xl:flex-row items-center xl:items-start gap-6 mt-8"
-              >
-                <a href="/images/Shazan_CV.pdf" download="Shazan_CV.pdf" className="flex gap-8 px-1 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-lg hover:scale-105 transition-transform duration-300">
-                  <Button variant="outline" className="flex items-center gap-2 text-md hover:bg-emerald-500/10 transition-all">
-                    Download CV
-                    <FiDownload className="text-xl" />
-                  </Button>
-                </a>
-                <div className="xl:border-l xl:border-white/20 xl:pl-8">
-                  <Social
-                    containerStyles="flex gap-6 text-lg hover:text-emerald-500"
-                    iconStyles="border border-white p-2 rounded-full text-white transition duration-300 hover:text-emerald-500 hover:border-emerald-500 hover:scale-110"
-                  />
-                </div>
-              </motion.div>
-            </motion.div>
-            <motion.div 
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-              className="hidden xl:flex xl:relative xl:w-1/2 xl:flex-col xl:items-center xl:justify-center xl:mt-0"
-            >
-              {/* Floating Code Animation */}
-              <div className="relative w-full max-w-md h-[400px]">
-                {/* Center Circle */}
-                <motion.div
-                  animate={{ 
-                    rotate: 360,
-                    scale: [1, 1.1, 1],
-                  }}
-                  transition={{ 
-                    rotate: { duration: 20, repeat: Infinity, ease: "linear" },
-                    scale: { duration: 3, repeat: Infinity, ease: "easeInOut" }
-                  }}
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-gradient-to-br from-emerald-500/20 to-blue-500/20 rounded-full backdrop-blur-xl border border-emerald-500/30 flex items-center justify-center"
-                >
-                  <span className="text-4xl">👨‍💻</span>
-                </motion.div>
-
-                {/* Orbiting Icons */}
-                <motion.div
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full"
-                >
-                  {/* React */}
-                  <motion.div
-                    whileHover={{ scale: 1.3 }}
-                    className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-16 bg-gradient-to-br from-cyan-500/20 to-cyan-500/10 rounded-xl backdrop-blur-md border border-cyan-500/30 flex items-center justify-center cursor-pointer"
-                  >
-                    <span className="text-2xl">⚛️</span>
-                  </motion.div>
-
-                  {/* Node */}
-                  <motion.div
-                    whileHover={{ scale: 1.3 }}
-                    className="absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-16 bg-gradient-to-br from-green-500/20 to-green-500/10 rounded-xl backdrop-blur-md border border-green-500/30 flex items-center justify-center cursor-pointer"
-                  >
-                    <span className="text-2xl">🟢</span>
-                  </motion.div>
-
-                  {/* Code */}
-                  <motion.div
-                    whileHover={{ scale: 1.3 }}
-                    className="absolute left-0 top-1/2 -translate-y-1/2 w-16 h-16 bg-gradient-to-br from-purple-500/20 to-purple-500/10 rounded-xl backdrop-blur-md border border-purple-500/30 flex items-center justify-center cursor-pointer"
-                  >
-                    <span className="text-2xl">💻</span>
-                  </motion.div>
-
-                  {/* Database */}
-                  <motion.div
-                    whileHover={{ scale: 1.3 }}
-                    className="absolute right-0 top-1/2 -translate-y-1/2 w-16 h-16 bg-gradient-to-br from-orange-500/20 to-orange-500/10 rounded-xl backdrop-blur-md border border-orange-500/30 flex items-center justify-center cursor-pointer"
-                  >
-                    <span className="text-2xl">🗄️</span>
-                  </motion.div>
-                </motion.div>
-
-                {/* Second Ring - Faster */}
-                <motion.div
-                  animate={{ rotate: -360 }}
-                  transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[85%] h-[85%]"
-                >
-                  <motion.div
-                    whileHover={{ scale: 1.3 }}
-                    className="absolute top-8 right-8 w-12 h-12 bg-gradient-to-br from-yellow-500/20 to-yellow-500/10 rounded-lg backdrop-blur-md border border-yellow-500/30 flex items-center justify-center cursor-pointer"
-                  >
-                    <span className="text-xl">⚡</span>
-                  </motion.div>
-
-                  <motion.div
-                    whileHover={{ scale: 1.3 }}
-                    className="absolute bottom-8 left-8 w-12 h-12 bg-gradient-to-br from-pink-500/20 to-pink-500/10 rounded-lg backdrop-blur-md border border-pink-500/30 flex items-center justify-center cursor-pointer"
-                  >
-                    <span className="text-xl">🎨</span>
-                  </motion.div>
-
-                  <motion.div
-                    whileHover={{ scale: 1.3 }}
-                    className="absolute top-8 left-8 w-12 h-12 bg-gradient-to-br from-blue-500/20 to-blue-500/10 rounded-lg backdrop-blur-md border border-blue-500/30 flex items-center justify-center cursor-pointer"
-                  >
-                    <span className="text-xl">🚀</span>
-                  </motion.div>
-
-                  <motion.div
-                    whileHover={{ scale: 1.3 }}
-                    className="absolute bottom-8 right-8 w-12 h-12 bg-gradient-to-br from-red-500/20 to-red-500/10 rounded-lg backdrop-blur-md border border-red-500/30 flex items-center justify-center cursor-pointer"
-                  >
-                    <span className="text-xl">🔥</span>
-                  </motion.div>
-                </motion.div>
-
-                {/* Floating particles */}
-                {[...Array(5)].map((_, i) => (
-                  <motion.div
-                    key={i}
-                    animate={{
-                      y: [0, -20, 0],
-                      opacity: [0.3, 0.6, 0.3],
-                    }}
-                    transition={{
-                      duration: 3,
-                      repeat: Infinity,
-                      delay: i * 0.5,
-                    }}
-                    className="absolute w-2 h-2 bg-emerald-500/40 rounded-full"
-                    style={{
-                      top: `${20 + i * 15}%`,
-                      left: `${10 + i * 20}%`,
-                    }}
-                  />
-                ))}
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
+      <Hero />
 
       {/* About Me / Resume Section */}
       <section id="resume" className="min-h-screen text-white px-6 py-32 relative bg-gradient-to-b from-[#0a0f1c] via-[#162032] to-[#0a0f1c]">
