@@ -3,6 +3,11 @@
 // Edit this file to update content across the entire site.
 // ============================================================
 
+export const aboutBio = [
+  "I'm Shazan, a Software Engineer and IT undergraduate at the University of Moratuwa, driven by curiosity and a genuine interest in using technology to solve meaningful problems.",
+  "I enjoy building software, exploring AI, and learning about DevOps — understanding not just how software is built, but how it's deployed, maintained, and continuously improved. My goal is to become a well rounded engineer who thinks critically, adapts to new technologies, and builds reliable products that make a real difference.",
+];
+
 export const education = [
   {
     year: "2024-2028",
@@ -149,3 +154,75 @@ export const services = [
     href: "",
   },
 ]
+
+// ============================================================
+// Competitions & Volunteering
+// Each item shows a brief card on the home page ("Beyond Code"
+// section). Clicking it opens /highlights/<category>/<slug>.
+// Drop images under:  public/images/competitions/<slug>/...
+//                     public/images/volunteering/<slug>/...
+// ============================================================
+
+export const competitions = [
+  {
+    slug: "sample-hackathon",
+    title: "Sample Hackathon",
+    role: "Finalist",
+    date: "2025",
+    brief:
+      "A short one-line teaser about the competition — what it was and your result.",
+    cover: "/images/competitions/sample-hackathon/cover.png",
+    details: {
+      summary:
+        "A short intro paragraph shown at the top of the detail page. Replace with the real story.",
+      body: [
+        "First paragraph of the full write-up — the challenge, what you built, the tech used.",
+        "Second paragraph — the outcome, what you learned, teammates, etc.",
+      ],
+      highlights: [
+        "Top 5 out of 120 teams",
+        "Built an AI-powered prototype in 24 hours",
+      ],
+      gallery: [
+        "/images/competitions/sample-hackathon/1.png",
+        "/images/competitions/sample-hackathon/2.png",
+      ],
+      link: "",
+    },
+  },
+]
+
+export const volunteering = [
+  {
+    slug: "sample-volunteering",
+    title: "Sample Volunteering",
+    role: "Volunteer",
+    date: "2024",
+    brief:
+      "A short one-line teaser about the volunteering work and your role in it.",
+    cover: "/images/volunteering/sample-volunteering/cover.png",
+    details: {
+      summary:
+        "A short intro paragraph shown at the top of the detail page. Replace with the real story.",
+      body: [
+        "First paragraph — the cause, the organisation, and what you did.",
+        "Second paragraph — the impact and your takeaways.",
+      ],
+      highlights: ["Helped organise the event", "Reached 200+ people"],
+      gallery: [
+        "/images/volunteering/sample-volunteering/1.png",
+        "/images/volunteering/sample-volunteering/2.png",
+      ],
+      link: "",
+    },
+  },
+]
+
+// Lookup helper used by the dynamic detail route.
+export const highlightGroups = { competitions, volunteering }
+
+export function getHighlight(category, slug) {
+  const group = highlightGroups[category]
+  if (!group) return null
+  return group.find((item) => item.slug === slug) || null
+}
