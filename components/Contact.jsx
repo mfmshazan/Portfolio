@@ -71,7 +71,7 @@ const Contact = () => {
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(108,196,23,0.06),transparent_70%)]" />
 
       <div className="relative mx-auto max-w-6xl">
-        <SectionHeading index="04" label="Contact" title="LET'S BUILD" />
+        <SectionHeading index="05" label="Contact" title="LET'S BUILD" />
 
         <div className="grid grid-cols-1 gap-14 md:grid-cols-2 md:gap-20">
           {/* Left */}

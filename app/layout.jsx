@@ -1,4 +1,4 @@
-import { JetBrains_Mono, Anton } from "next/font/google";
+import { JetBrains_Mono, Anton, Inter } from "next/font/google";
 import "./globals.css";
 
 import Header from "@/components/Header";
@@ -16,6 +16,12 @@ const anton = Anton({
   subsets: ["latin"],
 });
 
+const inter = Inter({
+  variable: "--font-inter",
+  weight: ["300", "400", "500"],
+  subsets: ["latin"],
+});
+
 
 export const metadata = {
   title: "Shazan Faslan — Fullstack, Mobile & AI Engineer",
@@ -25,7 +31,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${jetbrainsMono.variable} ${anton.variable}`}>
+      <body className={`${jetbrainsMono.variable} ${anton.variable} ${inter.variable}`}>
         <Header />{children}
         <PageTransition>
 

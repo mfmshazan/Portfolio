@@ -3,7 +3,7 @@
 import AnimatedSection from "@/components/AnimatedSection";
 import SectionHeading from "@/components/SectionHeading";
 import SkillsShowcase from "@/components/SkillsShowcase";
-import { education, experience } from "@/constants/data";
+import { aboutBio, education, experience } from "@/constants/data";
 import { FaGraduationCap, FaBriefcase } from "react-icons/fa";
 
 const TimelineColumn = ({ title, items, Icon }) => (
@@ -42,6 +42,30 @@ const About = () => {
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(108,196,23,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(108,196,23,0.04)_1px,transparent_1px)] bg-[size:60px_60px] opacity-40" />
       <div className="relative mx-auto max-w-6xl">
         <SectionHeading index="01" label="About Me" title="THE JOURNEY" />
+
+        {/* Intro narrative */}
+        {aboutBio && (
+          <div className="reveal mb-16 max-w-3xl space-y-4 font-primary">
+            {Array.isArray(aboutBio) ? (
+              aboutBio.map((paragraph, idx) => (
+                <p
+                  key={idx}
+                  className={`leading-relaxed ${
+                    idx === 0
+                      ? "text-base text-white/90 md:text-lg"
+                      : "text-sm text-white/60 md:text-base"
+                  }`}
+                >
+                  {paragraph}
+                </p>
+              ))
+            ) : (
+              <p className="text-base leading-relaxed text-white/80 md:text-lg">
+                {aboutBio}
+              </p>
+            )}
+          </div>
+        )}
 
         <div className="grid grid-cols-1 gap-14 md:grid-cols-2 md:gap-20">
           <TimelineColumn title="Education" items={education} Icon={FaGraduationCap} />

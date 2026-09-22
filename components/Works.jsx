@@ -1,11 +1,12 @@
 "use client";
 
+import Link from "next/link";
 import { useLayoutEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { projects } from "@/constants/data";
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
-import { FiChevronDown, FiChevronUp } from "react-icons/fi";
+import { FaGithub, FaExternalLinkAlt, FaAndroid } from "react-icons/fa";
+import { FiChevronDown, FiChevronUp, FiArrowUpRight } from "react-icons/fi";
 
 const Works = () => {
   const [visible, setVisible] = useState(4);
@@ -44,6 +45,9 @@ const Works = () => {
                   src={project.image}
                   alt=""
                   className="h-full w-full object-cover opacity-[0.12]"
+                  onError={(e) => {
+                    e.currentTarget.style.display = "none";
+                  }}
                 />
                 <span className="absolute inset-0 bg-gradient-to-r from-[#0d0d0d] via-[#0d0d0d]/85 to-[#0d0d0d]/40" />
               </div>
@@ -73,7 +77,7 @@ const Works = () => {
                 </h3>
 
                 {/* description */}
-                <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/50 md:text-xl">
+                <p className="mt-6 max-w-2xl font-primary text-sm leading-relaxed text-white/50 md:text-base">
                   {project.description}
                 </p>
 
@@ -89,24 +93,16 @@ const Works = () => {
                   ))}
                 </div>
 
-                {(project.isUnderDevelopment || project.isPrivate) && (
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {project.isUnderDevelopment && (
-                      <span className="flex items-center gap-1.5 rounded-full border border-amber-500/30 bg-amber-500/10 px-3 py-1 text-xs font-semibold text-amber-400">
-                        <span className="inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-amber-400" />
-                        Under Development
-                      </span>
-                    )}
-                    {project.isPrivate && (
-                      <span className="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-semibold text-white/50">
-                        🔒 Private Repo
-                      </span>
-                    )}
-                  </div>
-                )}
+                <div className="mt-10 flex flex-wrap items-center gap-3 border-t border-white/10 pt-8">
+                  {/* Primary: More details */}
+                  <Link
+                    href={`/projects/${project.slug}`}
+                    className="flex items-center gap-2 rounded-full bg-emerald-500 px-5 py-2.5 font-primary text-xs uppercase tracking-[0.2em] text-black transition-all hover:bg-emerald-400"
+                  >
+                    More details <FiArrowUpRight />
+                  </Link>
 
-                <div className="mt-10 flex items-center gap-4 border-t border-white/10 pt-8">
-                  {project.live ? (
+                  {project.live && (
                     <a
                       href={project.live}
                       target="_blank"
@@ -115,12 +111,21 @@ const Works = () => {
                     >
                       Live <FaExternalLinkAlt />
                     </a>
-                  ) : (
-                    <span className="flex cursor-not-allowed items-center gap-2 rounded-full border border-white/10 px-5 py-2.5 font-primary text-xs uppercase tracking-[0.2em] text-white/25">
-                      Live <FaExternalLinkAlt />
-                    </span>
                   )}
-                  {project.github && project.github !== "#" ? (
+
+                  {project.apks?.map((apk) => (
+                    <a
+                      key={apk.label}
+                      href={apk.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 rounded-full border border-white/20 px-5 py-2.5 font-primary text-xs uppercase tracking-[0.2em] text-white transition-all hover:border-emerald-400 hover:text-emerald-400"
+                    >
+                      <FaAndroid /> {apk.label}
+                    </a>
+                  ))}
+
+                  {project.github && project.github !== "#" && (
                     <a
                       href={project.github}
                       target="_blank"
@@ -129,10 +134,6 @@ const Works = () => {
                     >
                       Code <FaGithub />
                     </a>
-                  ) : (
-                    <span className="flex cursor-not-allowed items-center gap-2 rounded-full border border-white/10 px-5 py-2.5 font-primary text-xs uppercase tracking-[0.2em] text-white/25">
-                      Code <FaGithub />
-                    </span>
                   )}
                 </div>
               </div>
