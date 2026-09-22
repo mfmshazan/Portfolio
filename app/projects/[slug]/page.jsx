@@ -97,7 +97,7 @@ export default async function ProjectDetail({ params }) {
           </h2>
           <div className="space-y-5 text-white/70">
             {overview.map((para, i) => (
-              <p key={i} className="font-primary text-sm leading-relaxed md:text-base">
+              <p key={i} className="font-body text-base leading-relaxed text-white/70 md:text-lg">
                 {para}
               </p>
             ))}
@@ -117,7 +117,7 @@ export default async function ProjectDetail({ params }) {
                   className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/[0.02] p-4"
                 >
                   <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-400 shadow-[0_0_8px] shadow-emerald-400" />
-                  <span className="text-sm text-white/70">{f}</span>
+                  <span className="font-body text-sm text-white/70">{f}</span>
                 </div>
               ))}
             </div>
@@ -147,7 +147,7 @@ export default async function ProjectDetail({ params }) {
             <h2 className="mb-5 font-primary text-sm uppercase tracking-[0.25em] text-white/60">
               <span className="text-emerald-400">/</span> My Role
             </h2>
-            <p className="max-w-2xl leading-relaxed text-white/70 md:text-lg">
+            <p className="max-w-2xl font-body text-base leading-relaxed text-white/70 md:text-lg">
               {details.role}
             </p>
           </div>

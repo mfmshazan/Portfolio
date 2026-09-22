@@ -53,7 +53,7 @@ export default async function HighlightDetail({ params }) {
         </h1>
 
         {details?.summary && (
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/60">
+          <p className="mt-6 max-w-2xl font-body text-base leading-relaxed text-white/60 md:text-lg">
             {details.summary}
           </p>
         )}
@@ -72,7 +72,7 @@ export default async function HighlightDetail({ params }) {
                 className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/[0.02] p-4"
               >
                 <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-400 shadow-[0_0_8px] shadow-emerald-400" />
-                <span className="text-sm text-white/70">{h}</span>
+                <span className="font-body text-sm text-white/70">{h}</span>
               </div>
             ))}
           </div>
@@ -82,7 +82,7 @@ export default async function HighlightDetail({ params }) {
         {details?.body?.length > 0 && (
           <div className="mt-14 space-y-6 text-white/70">
             {details.body.map((para, i) => (
-              <p key={i} className="leading-relaxed md:text-lg">
+              <p key={i} className="font-body text-base leading-relaxed md:text-lg">
                 {para}
               </p>
             ))}

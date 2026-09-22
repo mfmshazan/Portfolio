@@ -43,7 +43,7 @@ export const skillCategories = [
   },
   {
     category: "Backend",
-    items: ["Node.js", "Express.js", "FastAPI", "Spring Boot", "REST APIs", "WebSocket / Socket.IO", "JWT & Clerk Auth"],
+    items: ["Node.js", "Express.js", "FastAPI", "REST APIs", "WebSocket / Socket.IO", "JWT & Clerk Auth"],
   },
   {
     category: "AI / ML",
